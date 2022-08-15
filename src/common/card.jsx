@@ -1,9 +1,11 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 const Card = (props) => {
 const {name,region,population,flag,capital}=props
     return (  
         
-            <div id='card'>
+            <Link to={`/details/${name}`} id='link'>
+             <div id='card'>
               <div id='image'><img src={flag} alt="" /></div>
               <div id='info'>
                 <div>
@@ -22,6 +24,7 @@ const {name,region,population,flag,capital}=props
                 </div>
                 </div>  
             </div>
+            </Link>
         
 
     );

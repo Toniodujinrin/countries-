@@ -17,11 +17,16 @@ code {
   grid-template-columns: repeat(4, 15%);
   gap: 2.5rem;
   grid-auto-rows: minmax(100px, 35%);
+
 }
 #details{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+#link{
+  text-decoration: none;
+  color: black;
 }
 #card {
   width: 100%;
