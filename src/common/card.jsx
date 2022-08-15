@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
-class  extends Component {
-    state = {  } 
-    render() { 
-        return ();
-    }
+import React from 'react';
+const Card = (props) => {
+const {}=props
+    return (  
+        <div>
+            <h1></h1>
+        </div>
+
+    );
 }
  
-export default ;
+export default Card;
