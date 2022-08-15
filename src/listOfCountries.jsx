@@ -3,19 +3,21 @@ import Card from './common/card';
 const ListCountries = ({countries}) => {
 
     
-   countries.splice(9,(countries.length-9))
+   countries.splice(8,(countries.length-8))
    console.log(countries)
     return ( 
        <div>
         {
             (countries.length>0)?  
             
-          <h1>
+          <div id='list'>
             {
-             <Card/>
+              
+              countries.map(country=><div key={country.name.official}>{<Card name={country.name.common} population={country.population} region={country.region} capital={country.capital[0]} flag={country.flags.svg} />}</div>)
+             
             
             }
-          </h1>:
+          </div>:
           <div></div>
         }
         
