@@ -3,20 +3,32 @@ import Home from './HomePage';
 import {Route,Routes} from 'react-router-dom'
 import Details from './DetailsPage';
 import NotFound from './NotFound';
+import Title from './TitleBar';
 class App extends Component {
-  state = {  } 
+  state = { 
+    darkMode:false
+   } 
   
+   handleTheme=()=>{
+    const darkMode= this.state.darkMode
+    this.setState({darkMode:!darkMode})
+
+   }
   
   render() { 
+    const {darkMode}=this.state
     return (
+      <React.Fragment>
+      <Title id='nav' handleTheme={this.handleTheme} theme={this.state.darkMode}/>
       <div>
         <Routes>
-       <Route path='/' element={<Home/>}/>
-       <Route path='details/:id' element={<Details/>}/>
-       <Route path='*' element={<NotFound/>}/>
+       <Route path='/' element={<Home theme={darkMode}/>}/>
+       <Route path='details/:id' element={<Details theme={darkMode}/>}/>
+       <Route path='*' element={<NotFound theme={darkMode}/>}/>
        
        </Routes>
       </div>
+      </React.Fragment>
     );
   }
 }

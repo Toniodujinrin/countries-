@@ -1,3 +1,12 @@
+:root{
+--Dark-Blue: hsl(209, 23%, 22%);
+--Very-Dark-Blue: hsl(207, 26%, 17%);
+--Very-Very-Dark-Blue-: hsl(200, 15%, 8%);
+--Dark-Gray: hsl(0, 0%, 52%);
+--Very-Light-Gray : hsl(0, 0%, 98%);
+--White : hsl(0, 0%, 100%);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,7 +14,27 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
 }
+.primary-dark{
+  background-color:var(--Very-Dark-Blue);
+  color:var(--Very-Light-Gray)o;
+}
+.secondary-dark{
+  background-color: var(--Dark-Blue);
+  color: var(--Very-Light-Gray);
+}
+.primary-light{
+  background-color: var(--Very-Light-Gray);
+  color: var(--Very-Very-Dark-Blue-);
+}
+.secondaary-light{
+  background-color: white;
+  color: var(--Very-Very-Dark-Blue-);
+}
+
+  
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -13,6 +42,7 @@ code {
 }
 
 #list{
+  
   display: grid;
   grid-template-columns: repeat(4, 15%);
   gap: 2.5rem;

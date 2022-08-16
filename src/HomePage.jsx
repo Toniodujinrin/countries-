@@ -9,13 +9,16 @@ class Home extends Component {
      }
     async componentDidMount(){
         const {data}= await axios.get('https://restcountries.com/v3.1/all')
+        
+
         this.setState({countires:data})
+
         console.log(data)
     }
      
     render() { 
         return (
-            <ListCountries countries={this.state.countires}/>
+            <ListCountries theme={this.props.theme} countries={this.state.countires}/>
         );
     }
 }
