@@ -14,7 +14,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- 
+ height: 100vh;
+}
+#root{
+  height: 100vh;
 }
 .primary-dark{
   background-color:var(--Very-Dark-Blue);
@@ -95,6 +98,59 @@ img{
 #population{
   margin: 0;
 
+}
+#details{
+  display: flex;
+  flex-direction: row;
+  margin-top: 5rem;
+  
+}
+#data{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+}
+#border{
+  display:flex;
+  flex-direction: row;
+}
+#border-list{
+  display: flex;
+  flex-direction: row;
+}
+#border-country{
+list-style: none;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+border-color: lightgray;
+border: solid 1px lightgray;
+width: 4rem;
+
+margin:1rem;
+text-align: center;
+}
+
+#flag-container{
+  width: 50%;
+  display: flex;
+}
+#flag{
+  width: 80%;
+  margin: auto;
+  height: 80%;
+}
+#information{
+  font-size:0.8rem;
+}
+#country-Name{
+  font-size:1.6rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.fact{
+  margin-bottom: 0.5rem;
+}
+.fact-header{
+  font-weight: bold;
 }
 
 

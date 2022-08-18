@@ -11,7 +11,7 @@ const {name,region,population,flag,capital,theme}=props
                 <div>
                 <h2 id='country-name'>{name}</h2>
                 </div>
-                <div id='details'>
+                <div id='Details'>
                 <div>
                 <p id='population'>{`Population: ${population}`}</p>
                 </div>
