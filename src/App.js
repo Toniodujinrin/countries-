@@ -6,7 +6,7 @@ import NotFound from './NotFound';
 import Title from './TitleBar';
 class App extends Component {
   state = { 
-    darkMode:false
+    darkMode:true
    } 
   
    handleTheme=()=>{
@@ -18,7 +18,7 @@ class App extends Component {
   render() { 
     const {darkMode}=this.state
     return (
-      <React.Fragment>
+      <div id='main'>
       <Title id='nav' handleTheme={this.handleTheme} theme={this.state.darkMode}/>
       <div>
         <Routes>
@@ -28,7 +28,7 @@ class App extends Component {
        
        </Routes>
       </div>
-      </React.Fragment>
+      </div>
     );
   }
 }
