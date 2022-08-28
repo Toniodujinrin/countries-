@@ -1,16 +1,23 @@
 import React,{useEffect, useState} from 'react';
 import Card from './common/card';
-const ListCountries = ({countries,theme,searched}) => {
-  const[newCountries,setNewCountries]=useState([])
+const ListCountries = ({countries,theme,searched,currentFilter}) => {
+  const[filteredCountries,setNewFiltered]=useState(countries)
+  const[newCountries,setNewCountries]=useState(countries)
   useEffect(()=>{
-    if(newCountries.length !== 0){
-    let newCountries = countries.filter(country => country.name.common.toLowerCase().startsWith(searched));
-  
-    setNewCountries(newCountries)
+    
+    const newFiltered= countries.filter(country=> country.region===currentFilter)
+    if(newFiltered.length !== 0) setNewFiltered(newFiltered)
+    else setNewFiltered(countries);
+    
+    const newCountry = filteredCountries.filter(country => country.name.common.toLowerCase().startsWith(searched));
+    if(newCountry.length !== 0){
+     setNewCountries(newCountry)
     }
-    else setNewCountries(countries)
+    else setNewCountries(filteredCountries);
 
-  },[searched])
+    console.log(filteredCountries)
+
+  },[currentFilter,searched])
   
    
   let countryList =[]

@@ -1,14 +1,19 @@
 import React from 'react';
-const Filter = () => {
+const Filter = ({handleSubmit, handleChange, currentFilter}) => {
     return (
         <div>
-        <form on onSubmit={handleSubmit}>
-         <select name = "dropdown">
-            <option value = "Computer Architecture" selected>Computer Architecture</option>
-            <option value = "Java">Java</option>
-            <option value = "Discrete Mathematics">Discrete Mathematics</option>
-         </select>
-         </form>
+        <div >
+         
+            <button  onClick={handleChange} value='All' >All</button>
+            <button  onClick={handleChange} value = "Asia" >Asia</button>
+            <button  onClick={handleChange} value = "Europe">Europe</button>
+            <button  onClick={handleChange} value = 'Oceania'>Oceania</button>
+            <button  onClick={handleChange} value  = 'Africa'>Africa</button>
+            <button  onClick={handleChange} value = 'Americas'>Americas</button>
+            <button  onClick={handleChange} value = 'Antarctic'>Antarctic</button>
+
+        
+         </div>
          
          </div> 
      );
