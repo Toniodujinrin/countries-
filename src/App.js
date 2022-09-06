@@ -8,11 +8,13 @@ class App extends Component {
   state = { 
     darkMode:true
    } 
-  
-   handleTheme=()=>{
+    handleTheme=()=>{
     const darkMode= this.state.darkMode
     this.setState({darkMode:!darkMode})
-
+    if(this.state.darkMode){
+      document.body.style.backgroundColor='hsl(207, 26%, 17%)'
+    }
+    else document.body.style.backgroundColor='hsl(0, 0%, 98%)'
    }
   
   render() { 
@@ -20,13 +22,12 @@ class App extends Component {
     return (
       <div id='main'>
       <Title id='nav' handleTheme={this.handleTheme} theme={this.state.darkMode}/>
-      <div>
+      <div id='core-content'>
         <Routes>
        <Route path='/' element={<Home theme={darkMode}/>}/>
        <Route path='details/:id' element={<Details theme={darkMode}/>}/>
        <Route path='*' element={<NotFound theme={darkMode}/>}/>
-       
-       </Routes>
+        </Routes>
       </div>
       </div>
     );
