@@ -8,21 +8,39 @@
 }
 
 body {
-  margin: 0;
+  
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- height: 100vh;
+  background-color: var(--Very-Light-Gray);
+ 
 }
 
-#root{
-  height: 100vh;
+.dots-3 {
+  width: 60px;
+  margin: auto;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side,#000 90%,#0000);
+  background: 
+    var(--_g) 0%   50%,
+    var(--_g) 50%  50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100%/3) 50%;
+  animation: d3 1s infinite linear;
 }
+@keyframes d3 {
+    20%{background-position:0%   0%, 50%  50%,100%  50%}
+    40%{background-position:0% 100%, 50%   0%,100%  50%}
+    60%{background-position:0%  50%, 50% 100%,100%   0%}
+    80%{background-position:0%  50%, 50%  50%,100% 100%}
+}
+
 .primary-dark{
   background-color:var(--Very-Dark-Blue);
-  color:var(--Very-Light-Gray)o;
+  color:var(--Very-Light-Gray);
+ 
 }
 .secondary-dark{
   background-color: var(--Dark-Blue);
@@ -31,34 +49,47 @@ body {
 .primary-light{
   background-color: var(--Very-Light-Gray);
   color: var(--Very-Very-Dark-Blue-);
+  height: 100%;
+  width: 100%;
 }
 .secondaary-light{
   background-color: white;
   color: var(--Very-Very-Dark-Blue-);
 }
+#details-page{
+  height: 100%;
+  width: 100%;
+  animation: fadeIn 1s;
 
-  
-
-
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+.navbar{
+  height: 10%;
+}
 #list{
-  
   display: grid;
   grid-template-columns: repeat(4, 15%);
-  gap: 2.5rem;
+  gap: 5rem;
   grid-auto-rows: minmax(35%, auto);
-
+  justify-items: normal;
   margin-top: 2rem;
+  justify-content: center;
+}
+#loader{
+ width: 100%;
+ height: 80vh;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-content: center;
 
 }
-#details{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 #link{
   text-decoration: none;
@@ -69,22 +100,20 @@ code {
   height: 100%;
   display: flex;
   flex-direction: column;
-  
-  border-radius: 5px;
 
+  border-radius: 5px;
+  animation: fadeIn 1s;
  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 #image{
   height: 50%;
   width: 100%;
-
 }
 img{
   width: 100%;
   height: 100%;
-  
+  object-fit:cover;
 }
-
 #info{
   width: 100%;
   height: 50%;
@@ -94,20 +123,17 @@ img{
 #country-name{
   font-size:1rem;
 }
-
 #region{
   margin: 0;
-  
 }
 #population{
   margin: 0;
-
 }
 #details{
   display: flex;
   flex-direction: row;
   margin-top: 5rem;
-  
+  width: 100%;
 }
 #data{
   display: flex;
@@ -119,7 +145,11 @@ img{
   flex-direction: row;
 }
 #border-list{
-  display: flex;
+  display:grid;
+  grid-template-columns: repeat(3, 15%);
+  column-gap:2rem;
+  row-gap: 1rem;
+  grid-auto-rows: minmax(10%, auto);
   flex-direction: row;
 }
 #border-country{
@@ -128,8 +158,7 @@ box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 border-color: lightgray;
 border: solid 1px lightgray;
 width: 4rem;
-
-margin:1rem;
+margin-bottom: 1rem;
 text-align: center;
 }
 
@@ -144,6 +173,7 @@ text-align: center;
 }
 #information{
   font-size:0.8rem;
+  width: 50%;
 }
 #country-Name{
   font-size:1.6rem;
@@ -156,5 +186,35 @@ text-align: center;
 .fact-header{
   font-weight: bold;
 }
+@media screen and (max-width:925px){
+  #list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #card{
+    margin: auto;
+    width: 70%;
+    height: 100%;
+  }
+  #details{
+    flex-direction: column;
+  }
+  #flag-container{
+    width: 100%;
+    height: 40%;
+  }
+  img{
+    object-fit: cover;
+  }
+  #information{
+    width: 100%;
+  }
+  #data{
+    flex-direction: column;
+  }
+
+}
+
 
 
