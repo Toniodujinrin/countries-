@@ -20,12 +20,7 @@ const Details = ({ theme }) => {
       else
         getCountry(setCountry, name, "https://restcountries.com/v3.1/alpha/");
     } catch (error) {
-      if (error.response && error.response.status === 404) {
-        window.alert("country not found");
-      } else {
-        window.alert("check connection");
-        console.log(error);
-      }
+      console.log("error");
     }
   }, [name]);
 
