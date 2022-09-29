@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const CountryDetails = (props) => {
   const {
+    theme,
     flag,
     currencies,
     languages,
@@ -22,7 +23,18 @@ const CountryDetails = (props) => {
   return (
     <div id="details-page">
       <div>
-        <button onClick={() => navigate(-1)}>Back</button>
+        <button
+          id="back-button"
+          className={theme ? "secondary-light" : "secondary-dark"}
+          onClick={() => navigate(-1)}
+        >
+          {!theme ? (
+            <img id="moon" src="../images/arrowWhite.svg" alt="" />
+          ) : (
+            <img id="moon" src="../images/leftArrow.svg" alt="" />
+          )}
+          Back
+        </button>
       </div>
       <div id="details">
         <div id="flag-container">
@@ -76,7 +88,11 @@ const CountryDetails = (props) => {
                 <ul id="border-list">
                   {borders.map((borderCountry) => (
                     <Link id="link" to={`/details/${borderCountry}`}>
-                      <li key={borderCountry} id="border-country">
+                      <li
+                        className={theme ? "secondary-light" : "secondary-dark"}
+                        key={borderCountry}
+                        id="border-country"
+                      >
                         {borderCountry}
                       </li>
                     </Link>

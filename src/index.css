@@ -1,75 +1,94 @@
-:root{
---Dark-Blue: hsl(209, 23%, 22%);
---Very-Dark-Blue: hsl(207, 26%, 17%);
---Very-Very-Dark-Blue-: hsl(200, 15%, 8%);
---Dark-Gray: hsl(0, 0%, 52%);
---Very-Light-Gray : hsl(0, 0%, 98%);
---White : hsl(0, 0%, 100%);
+:root {
+  --Dark-Blue: hsl(209, 23%, 22%);
+  --Very-Dark-Blue: hsl(207, 26%, 17%);
+  --Very-Very-Dark-Blue-: hsl(200, 15%, 8%);
+  --Dark-Gray: hsl(0, 0%, 52%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --White: hsl(0, 0%, 100%);
 }
 
 body {
-  
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--Very-Light-Gray);
- 
 }
 
 .dots-3 {
   width: 60px;
   margin: auto;
   aspect-ratio: 2;
-  --_g: no-repeat radial-gradient(circle closest-side,#000 90%,#0000);
-  background: 
-    var(--_g) 0%   50%,
-    var(--_g) 50%  50%,
-    var(--_g) 100% 50%;
-  background-size: calc(100%/3) 50%;
+  --_g: no-repeat radial-gradient(circle closest-side, #000 90%, #0000);
+  background: var(--_g) 0% 50%, var(--_g) 50% 50%, var(--_g) 100% 50%;
+  background-size: calc(100% / 3) 50%;
   animation: d3 1s infinite linear;
 }
 @keyframes d3 {
-    20%{background-position:0%   0%, 50%  50%,100%  50%}
-    40%{background-position:0% 100%, 50%   0%,100%  50%}
-    60%{background-position:0%  50%, 50% 100%,100%   0%}
-    80%{background-position:0%  50%, 50%  50%,100% 100%}
+  20% {
+    background-position: 0% 0%, 50% 50%, 100% 50%;
+  }
+  40% {
+    background-position: 0% 100%, 50% 0%, 100% 50%;
+  }
+  60% {
+    background-position: 0% 50%, 50% 100%, 100% 0%;
+  }
+  80% {
+    background-position: 0% 50%, 50% 50%, 100% 100%;
+  }
 }
 
-.primary-dark{
-  background-color:var(--Very-Dark-Blue);
-  color:var(--Very-Light-Gray);
- 
+.primary-dark {
+  background-color: var(--Very-Dark-Blue);
+  color: var(--Very-Light-Gray);
 }
-.secondary-dark{
+.secondary-dark {
   background-color: var(--Dark-Blue);
   color: var(--Very-Light-Gray);
 }
-.primary-light{
+.primary-light {
   background-color: var(--Very-Light-Gray);
   color: var(--Very-Very-Dark-Blue-);
   height: 100%;
   width: 100%;
 }
-.secondaary-light{
+.secondaary-light {
   background-color: white;
   color: var(--Very-Very-Dark-Blue-);
 }
-#details-page{
+#details-page {
   height: 100%;
   width: 100%;
   animation: fadeIn 1s;
-
 }
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.navbar{
+.navbar {
   height: 10%;
 }
-#list{
+#nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+#search-bar {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  width: 20rem;
+  padding: 0.4rem;
+  border: 1px solid black;
+}
+
+#search-bar:focus {
+  outline: none;
+}
+#list {
   display: grid;
   grid-template-columns: repeat(4, 15%);
   gap: 5rem;
@@ -78,20 +97,23 @@ code {
   margin-top: 2rem;
   justify-content: center;
 }
-#loader{
- width: 100%;
- height: 80vh;
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-content: center;
-
+#loader {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-#link{
+#link {
   text-decoration: none;
   color: black;
 }
@@ -103,118 +125,137 @@ code {
 
   border-radius: 5px;
   animation: fadeIn 1s;
- box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-#image{
+#image {
   height: 50%;
   width: 100%;
 }
-img{
+img {
   width: 100%;
   height: 100%;
-  object-fit:cover;
+  object-fit: cover;
 }
-#info{
+#info {
   width: 100%;
   height: 50%;
   font-size: small;
   margin-left: 1rem;
 }
-#country-name{
-  font-size:1rem;
+#country-name {
+  font-size: 1rem;
 }
-#region{
+#region {
   margin: 0;
 }
-#population{
+#population {
   margin: 0;
 }
-#details{
+#details {
   display: flex;
   flex-direction: row;
   margin-top: 5rem;
   width: 100%;
 }
-#data{
+#data {
   display: flex;
   flex-direction: row;
   margin-bottom: 1rem;
 }
-#border{
-  display:flex;
+#border {
+  display: flex;
   flex-direction: row;
 }
-#border-list{
-  display:grid;
+#border-list {
+  display: grid;
   grid-template-columns: repeat(3, 15%);
-  column-gap:2rem;
+  column-gap: 2rem;
   row-gap: 1rem;
   grid-auto-rows: minmax(10%, auto);
   flex-direction: row;
 }
-#border-country{
-list-style: none;
-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-border-color: lightgray;
-border: solid 1px lightgray;
-width: 4rem;
-margin-bottom: 1rem;
-text-align: center;
+#border-country {
+  list-style: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-color: lightgray;
+  border: solid 1px lightgray;
+  width: 4rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
-#flag-container{
+#flag-container {
   width: 50%;
   display: flex;
 }
-#flag{
+#flag {
   width: 80%;
   margin: auto;
   height: 80%;
 }
-#information{
-  font-size:0.8rem;
+#information {
+  font-size: 0.8rem;
   width: 50%;
+  padding-left: 1rem;
+  padding-top: 1rem;
 }
-#country-Name{
-  font-size:1.6rem;
+#country-Name {
+  font-size: 1.6rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
-.fact{
+.fact {
   margin-bottom: 0.5rem;
 }
-.fact-header{
+.fact-header {
   font-weight: bold;
 }
-@media screen and (max-width:925px){
-  #list{
+.filterComponent {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding-right: 1rem;
+}
+#moon {
+  height: 15px;
+  width: 15px;
+  margin-right: 5px;
+}
+#theme-button {
+  background-color: transparent;
+  border: none;
+}
+#back-button {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: none;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+@media screen and (max-width: 925px) {
+  #list {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  #card{
+  #card {
     margin: auto;
     width: 70%;
     height: 100%;
   }
-  #details{
+  #details {
     flex-direction: column;
   }
-  #flag-container{
+  #flag-container {
     width: 100%;
     height: 40%;
   }
-  img{
+  img {
     object-fit: cover;
   }
-  #information{
+  #information {
     width: 100%;
   }
-  #data{
+  #data {
     flex-direction: column;
   }
-
 }
-
-
-

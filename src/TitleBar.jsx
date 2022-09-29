@@ -2,6 +2,7 @@ import React from "react";
 const Title = ({ handleTheme, theme }) => {
   return (
     <nav
+      id="nav"
       className={
         theme
           ? "navbar navbar-expand-lg secondary-light"
@@ -10,8 +11,17 @@ const Title = ({ handleTheme, theme }) => {
     >
       <span>Where in the world?</span>
       <span>
-        <button onClick={handleTheme}>
-          {theme ? "Light Mode" : "Dark Mode"}
+        <button
+          id="theme-button"
+          className={theme ? " secondary-light" : " secondary-dark"}
+          onClick={handleTheme}
+        >
+          {theme ? (
+            <img id="moon" src="./images/moonClear.svg" />
+          ) : (
+            <img id="moon" src="./images/moon.svg" alt="" />
+          )}
+          Dark Mode
         </button>
       </span>
     </nav>

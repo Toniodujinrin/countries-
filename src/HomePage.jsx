@@ -17,20 +17,18 @@ class Home extends Component {
   handleSearch = ({ currentTarget: input }) => {
     this.setState({ searched: input.value });
   };
-  handleChange = ({ currentTarget: input }) => {
-    this.setState({ currentFilter: input.value });
-  };
 
   render() {
     const { searched, currentFilter } = this.state;
     return (
       <React.Fragment>
         <Search
+          theme={this.props.theme}
           searched={searched}
           handleSearch={this.handleSearch}
           currentFilter={currentFilter}
         />
-        <Filter handleChange={this.handleChange} />
+
         <ListCountries
           theme={this.props.theme}
           countries={this.state.countires}

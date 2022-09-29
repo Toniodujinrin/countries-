@@ -41,6 +41,7 @@ const Details = ({ theme }) => {
     <div className={theme ? "primary-light" : "primary-dark"}>
       {country ? (
         <CountryDetails
+          theme={theme}
           flag={country.flags.svg}
           commonName={country.name.common}
           population={country.population}
