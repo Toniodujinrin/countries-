@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 class Filter extends Component {
   state = {};
-  setChange = ({ currentTarget: input }) => {
-    this.props.setFilter(input.value);
-    console.log("hey");
-  };
+
   render() {
-    const { handleSubmit, setFilter, currentFilter, theme } = this.props;
+    const { value, setValue } = this.props;
 
     return (
       <div>
         <select
+          value={value}
           className={theme ? "secondary-light" : "secondary-dark"}
-          onChange={this.setChange}
+          onSelect={(e) => {
+            e.currentTarget.value;
+          }}
         >
           <option value="All">All</option>
           <option value="Asia">Asia</option>
