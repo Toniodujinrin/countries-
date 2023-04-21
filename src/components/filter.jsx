@@ -1,17 +1,14 @@
 import React, { Component } from "react";
 class Filter extends Component {
-  state = {};
-
   render() {
-    const { value, setValue } = this.props;
+    const { theme } = this.props;
 
     return (
       <div>
         <select
-          value={value}
           className={theme ? "secondary-light" : "secondary-dark"}
-          onSelect={(e) => {
-            e.currentTarget.value;
+          onChange={(e) => {
+            this.props.setFilter(e.currentTarget.value);
           }}
         >
           <option value="All">All</option>
