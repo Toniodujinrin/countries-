@@ -18,7 +18,7 @@ const ListCountries = ({ countries, theme, searched, currentFilter }) => {
 
       if (newFiltered.length !== 0) setCountryList(newFiltered);
     }
-  }, [currentFilter]);
+  }, [currentFilter, countries]);
   useEffect(() => {
     const _countries = [...countries];
     const newCountry = _countries.filter((country) =>
@@ -29,7 +29,7 @@ const ListCountries = ({ countries, theme, searched, currentFilter }) => {
       console.log(newCountry);
       setCountryList(newCountry);
     }
-  }, [searched]);
+  }, [searched, countries]);
   if (countryList.length > 8) countryList.splice(0, countryList.length - 8);
 
   return (

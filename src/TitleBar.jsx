@@ -17,9 +17,9 @@ const Title = ({ handleTheme, theme }) => {
           onClick={handleTheme}
         >
           {theme ? (
-            <img id="moon" src="./images/moonClear.svg" />
+            <img id="moon" src="./images/moonClear.svg" alt="moon" />
           ) : (
-            <img id="moon" src="./images/moon.svg" alt="" />
+            <img id="moon" src="./images/moon.svg" alt="moon" />
           )}
           Dark Mode
         </button>
